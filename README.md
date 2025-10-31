@@ -2,12 +2,13 @@
 BorCelle — a modern furniture front-end project (HTML, CSS, JS)
 ---
 
-##  Group Members
-| Name        |  Roll Number 
-|-------------|-------------
-Hira Fatima      25F-0689
-Sana Sheikh      25F-0779
-Nadia Farid      25F-0530
+## Group Members
+
+| Name         | Roll Number |
+|---------------|-------------|
+| Hira Fatima   | 25F-0689    |
+| Sana Sheikh   | 25F-0779    |
+| Nadia Farid   | 25F-0530    |
 
 ##  Project Description
 BorCelle aims to deliver a smooth, minimal, and modern web experience for users interested in furniture shopping.  

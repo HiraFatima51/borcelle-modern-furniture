@@ -5,6 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Furniture Shop</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== FIXED ANIMATIONS THAT WON'T HIDE CONTENT ===== */
+        
+        /* Hero section with safe animations */
+        .hero {
+            position: relative;
+            overflow: visible;
+        }
+        
+        .hero-text h1 {
+            animation: floatText 6s ease-in-out infinite;
+        }
+        
+        @keyframes floatText {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        /* Enhanced button effects */
+        .bespoke-btn, .quote-btn {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .bespoke-btn:hover, .quote-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(180, 154, 96, 0.3);
+        }
+        
+        /* Safe fade-in animations that don't hide content initially */
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Scroll-triggered animations */
+        .scroll-fade {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.8s ease-out;
+        }
+        
+        .scroll-fade:not(.animated) {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .scroll-fade.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Enhanced project card animations */
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Process step hover effects */
+        .step-box {
+            transition: all 0.3s ease;
+        }
+        
+        .step-box:hover {
+            transform: translateX(8px);
+            border-color: #b49a60;
+        }
+        
+        .step-box:hover .step-num {
+            background: #b49a60;
+            color: white;
+            border-color: #b49a60;
+        }
+        
+        /* Logo hover effects */
+        .logo-row img {
+            transition: all 0.3s ease;
+        }
+        
+        .logo-row img:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Navbar scroll effect */
+        .navbar {
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Safe particles background */
+        .particles-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(180, 154, 96, 0.1);
+            border-radius: 50%;
+            animation: floatParticle 15s infinite linear;
+        }
+        
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -19,7 +152,6 @@
                 <li><a href="Projects.html">PROJECTS</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="contact.html">CONTACT</a></li>
-            
             </ul>
         </nav>
 
@@ -35,6 +167,9 @@
 
     <!-- HERO SECTION -->
     <section class="hero">
+        <!-- Safe Particles Background -->
+        <div class="particles-container" id="particles"></div>
+        
         <div class="hero-text">
             <h1>Bespoke Furniture<br>for Hotels and<br>Restaurants</h1>
 
@@ -50,7 +185,7 @@
     </section>
 
 <!-- ABOUT / DESCRIPTION SECTION -->
-<section class="about-section">
+<section class="about-section scroll-fade">
     <p>
         Borcelle is a multi-faceted hospitality specialist supplying contract furniture 
         and manufacturing bespoke pieces for hotel and restaurant projects worldwide. 
@@ -58,12 +193,10 @@
         and Fit Out for offices and residential projects.
     </p>
 </section>
- <div class="colored-div">
-
-    </div>
+ <div class="colored-div"></div>
 
 <!-- TRUSTED BRANDS SECTION -->
-<section class="trusted-section">
+<section class="trusted-section scroll-fade">
     <h3>Trusted by international brands, boutique hotels, and architects</h3>
 
     <div class="logo-row">
@@ -75,7 +208,8 @@
         <img src="HBAlogo.jpg" alt="HBA">
     </div>
 </section>
-<section class="bespoke-section">
+
+<section class="bespoke-section scroll-fade">
     <div class="bespoke-content">
 
         <div class="bespoke-text">
@@ -105,7 +239,8 @@
 
     </div>
 </section>
-<section class="process-section">
+
+<section class="process-section scroll-fade">
 
     <h2 class="process-title">Our Eight Step Process</h2>
 
@@ -189,8 +324,9 @@
 
     </div>
 </section>
+
 <!-- PROJECTS SECTION -->
-<section class="projects-section">
+<section class="projects-section scroll-fade">
     <h2>Some of our Projects</h2>
 
     <div class="projects-row">
@@ -226,7 +362,8 @@
 
     </div>
 </section>
-<section class="testimonial-section">
+
+<section class="testimonial-section scroll-fade">
     <div class="strip"></div>
 
     <div class="testimonial-box">
@@ -248,6 +385,7 @@
 
     <div class="strip"></div>
 </section>
+
 <footer class="footer">
     <div class="footer-content">
 
@@ -318,6 +456,64 @@
         © Copyright 2025 Borcelle® is a Registered Trademark.
     </p>
 </footer>
-<script src="search.js"></script>
+
+<script>
+    // Safe animations that won't hide content
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // Create floating particles (safe version)
+        function createParticles() {
+            const container = document.getElementById('particles');
+            if (!container) return;
+            
+            for (let i = 0; i < 8; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                const size = Math.random() * 15 + 5;
+                const left = Math.random() * 100;
+                const delay = Math.random() * 15;
+                const duration = Math.random() * 10 + 15;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${left}%`;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.animationDuration = `${duration}s`;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Scroll animations (safe version)
+        function initScrollAnimations() {
+            const scrollElements = document.querySelectorAll('.scroll-fade');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            scrollElements.forEach(element => observer.observe(element));
+        }
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Initialize animations
+        createParticles();
+        initScrollAnimations();
+    });
+</script>
 </body>
 </html>

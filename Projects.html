@@ -3,145 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Furniture Shop</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* ===== FIXED ANIMATIONS THAT WON'T HIDE CONTENT ===== */
-        
-        /* Hero section with safe animations */
-        .hero {
-            position: relative;
-            overflow: visible;
-        }
-        
-        .hero-text h1 {
-            animation: floatText 6s ease-in-out infinite;
-        }
-        
-        @keyframes floatText {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-        }
-        
-        /* Enhanced button effects */
-        .bespoke-btn, .quote-btn {
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .bespoke-btn:hover, .quote-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(180, 154, 96, 0.3);
-        }
-        
-        /* Safe fade-in animations that don't hide content initially */
-        .fade-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Scroll-triggered animations */
-        .scroll-fade {
-            opacity: 1;
-            transform: translateY(0);
-            transition: all 0.8s ease-out;
-        }
-        
-        .scroll-fade:not(.animated) {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        
-        .scroll-fade.animated {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Enhanced project card animations */
-        .project-card {
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        /* Process step hover effects */
-        .step-box {
-            transition: all 0.3s ease;
-        }
-        
-        .step-box:hover {
-            transform: translateX(8px);
-            border-color: #b49a60;
-        }
-        
-        .step-box:hover .step-num {
-            background: #b49a60;
-            color: white;
-            border-color: #b49a60;
-        }
-        
-        /* Logo hover effects */
-        .logo-row img {
-            transition: all 0.3s ease;
-        }
-        
-        .logo-row img:hover {
-            transform: scale(1.05);
-        }
-        
-        /* Navbar scroll effect */
-        .navbar {
-            transition: box-shadow 0.3s ease;
-        }
-        
-        .navbar.scrolled {
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Safe particles background */
-        .particles-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-            pointer-events: none;
-        }
-        
-        .particle {
-            position: absolute;
-            background: rgba(180, 154, 96, 0.1);
-            border-radius: 50%;
-            animation: floatParticle 15s infinite linear;
-        }
-        
-        @keyframes floatParticle {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.3;
-            }
-            90% {
-                opacity: 0.3;
-            }
-            100% {
-                transform: translateY(-100px) rotate(360deg);
-                opacity: 0;
-            }
-        }
-    </style>
+    <title>Our Projects</title>
+    <link rel="stylesheet" href="Projects.css">
 </head>
 <body>
-
-    <!-- NAVBAR -->
+     <!-- NAVBAR -->
     <header class="navbar">
         <div class="logo">Borcelle</div>
 
@@ -164,228 +30,87 @@
             </div>
         </div>
     </header>
+    <section class="projects-section">
+        <h2 class="title">Our Projects</h2>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <!-- Safe Particles Background -->
-        <div class="particles-container" id="particles"></div>
-        
-        <div class="hero-text">
-            <h1>Bespoke Furniture<br>for Hotels and<br>Restaurants</h1>
-
-            <p>From drawings to on-site install. Prototypes, certified finishes and<br>
-                global delivery.</p>
-
-            <button class="bespoke-btn">Request Bespoke Quote</button>
-        </div>
-
-        <div class="hero-image">
-            <img src="\Homepage picture.jpg" alt="Furniture Image">
-        </div>
-    </section>
-
-<!-- ABOUT / DESCRIPTION SECTION -->
-<section class="about-section scroll-fade">
-    <p>
-        Borcelle is a multi-faceted hospitality specialist supplying contract furniture 
-        and manufacturing bespoke pieces for hotel and restaurant projects worldwide. 
-        Treem Build, an associated company of Borcelle, specializes in Interior Design 
-        and Fit Out for offices and residential projects.
-    </p>
-</section>
- <div class="colored-div"></div>
-
-<!-- TRUSTED BRANDS SECTION -->
-<section class="trusted-section scroll-fade">
-    <h3>Trusted by international brands, boutique hotels, and architects</h3>
-
-    <div class="logo-row">
-        <img src="Genslerlogo.png" alt="Gensler">
-        <img src="oberoilogo.webp" alt="Oberoi">
-        <img src="Emirateslogo.png" alt="Emirates">
-        <img src="furnicqmlogo.jpg" alt="Furnicom">
-        <img src="westin.jpeg" alt="The Westin">
-        <img src="HBAlogo.jpg" alt="HBA">
-    </div>
-</section>
-
-<section class="bespoke-section scroll-fade">
-    <div class="bespoke-content">
-
-        <div class="bespoke-text">
-            <h2>Bespoke Furniture Made for Your Brand</h2>
-
-            <p>
-                We engineer custom seating, tables and storage for hospitality spaces.
-                Share drawings or mood boards and we prototype, certify finishes and
-                install on-site. Contract-grade frames, foams and joinery built for heavy use.
-            </p>
-
-            <ul class="bespoke-list">
-                <li>Prototypes and mock-ups</li>
-                <li>Fire and durability certificates</li>
-                <li>Export packing and tracking</li>
-                <li>On-site installation</li>
-            </ul>
-
-            <a href="#" class="bespoke-btn">Request Bespoke Quote</a>
-        </div>
-
-        <div class="bespoke-image-block">
-            <img src="Homepage image2.jpg" alt="Furniture Image">
-
-            <p class="bespoke-caption">Lounge Area, GNPC Ghana</p>
-        </div>
-
-    </div>
-</section>
-
-<section class="process-section scroll-fade">
-
-    <h2 class="process-title">Our Eight Step Process</h2>
-
-    <div class="process-container">
-
-        <!-- Left Side Images -->
-        <div class="process-images">
-            <img src="picture1.jpg" class="process-img">
-        </div>
-
-        <!-- Right Side Steps -->
-        <div class="process-steps">
-
-            <h3 class="process-subtitle">From enquiry to installation</h3>
-
-            <div class="step-box">
-                <span class="step-num">01</span>
-                <div>
-                    <h4>Enquiry</h4>
-                    <p>Send drawings or references with quantities, finishes and timeline</p>
-                </div>
-            </div>
-
-            <div class="step-box">
-                <span class="step-num">02</span>
-                <div>
-                    <h4>Scope and Budget</h4>
-                    <p>We review scope, propose materials and confirm budgets and lead times</p>
-                </div>
-            </div>
-
-            <div class="step-box">
-                <span class="step-num">03</span>
-                <div>
-                    <h4>Concept and sampling</h4>
-                    <p>Finish boards, fabric and timber samples prepared for approval</p>
-                </div>
-            </div>
-
-            <div class="step-box">
-                <span class="step-num">04</span>
-                <div>
-                    <h4>Prototype</h4>
-                    <p>Pre-production sample built to test comfort, joinery and details</p>
-                </div>
-            </div>
-
-            <div class="step-box">
-                <span class="step-num">05</span>
-                <div>
-                    <h4>Manufacture</h4>
-                    <p>Batch production using contract-grade frames, foams and finishes</p>
-                </div>
-            </div>
-
-            <div class="step-box">
-                <span class="step-num">06</span>
-                <div>
-                    <h4>Quality and compliance</h4>
-                    <p>Checks for dimensions and finish; fire and durability certificates on request</p>
-                </div>
-            </div>
-
-            <div class="step-box">
-                <span class="step-num">07</span>
-                <div>
-                    <h4>Logistics</h4>
-                    <p>Export packing, documentation and global freight with tracking</p>
-                </div>
-            </div>
-
-            <div class="step-box">
-                <span class="step-num">08</span>
-                <div>
-                    <h4>Delivery and installation</h4>
-                    <p>On-site assembly and snagging for a seamless handover</p>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-<!-- PROJECTS SECTION -->
-<section class="projects-section scroll-fade">
-    <h2>Some of our Projects</h2>
-
-    <div class="projects-row">
-
-        <!-- Project Card 1 -->
-        <div class="project-card">
-            <img src="sofastyle.jpg" alt="Emirates Travel Shop">
-            <h3>Emirates Travel Shop, London</h3>
-            <p>
-                Custom manufacturing of furniture and lighting, 
-                in addition to complete interior Fit-out.
-            </p>
-        </div>
-
-        <!-- Project Card 2 -->
-        <div class="project-card">
-            <img src="openareapic.jpg" alt="Ghana Petroleum Corp">
-            <h3>Ghana National Petroleum Corporation, Ghana</h3>
-            <p>
-                Custom manufacturing of furniture and lighting, and complete 
-                Interior and Landscape Design services.
-            </p>
-        </div>
-
-        <!-- Project Card 3 -->
-        <div class="project-card">
-            <img src="Bedroom.jpg" alt="Westin London City">
-            <h3>The Westin London City, London</h3>
-            <p>
-                Supplied custom made furniture for hotel lobby and rooms.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<section class="testimonial-section scroll-fade">
-    <div class="strip"></div>
-
-    <div class="testimonial-box">
-        <h2>What clients say</h2>
-
-        <p class="text">
-            "The professionalism of the team ensured everything was carried forward in a straightforward,
-            customer friendly manner.."
+        <p class="description">
+            Our work includes projects such as the Emirates Travel Shop in London,
+            Ghana National Petroleum Corporation in Ghana, La Sivolière in France,
+            and The Westin, London City.
         </p>
 
-        <h3 class="name">Paolo Rinaldi D</h3>
-        <p class="role">Architect Creneau International</p>
+        <div class="projects-grid">
 
-        <div class="arrows">
-            <span>&#8249;</span>
-            <span>&#8250;</span>
+            <!-- PROJECT 1 -->
+            <div class="project-card">
+                <img src="/Project1.jpg" alt="">
+                <div class="overlay">Emirates Premium Client Lounge_London, UK</div>
+            </div>
+
+            <!-- PROJECT 2 -->
+            <div class="project-card">
+                <img src="/Project2.jpg" alt="">
+                <div class="overlay">Golden Crest Executive Reception_Dubai, UAE</div>
+            </div>
+
+            <!-- PROJECT 3 -->
+            <div class="project-card">
+                <img src="/Project3.jpg" alt="">
+                <div class="overlay">The Royal Oak Signature Bar_London City, UK</div>
+            </div>
+
+            <!-- PROJECT 4 -->
+            <div class="project-card">
+                <img src="/Project4.jpg" alt="">
+                <div class="overlay">Aurum Private Members Club_New York, USA</div>
+            </div>
+
+            <!-- PROJECT 5 -->
+            <div class="project-card">
+                <img src="/Project5.jpg" alt="">
+                <div class="overlay">Crystal Bay Business Lounge_Doha, Qatar</div>
+            </div>
+
+            <!-- PROJECT 6 -->
+            <div class="project-card">
+                <img src="/Project6.jpg" alt="">
+                <div class="overlay">Casa Bella Elite Lobby_Madrid, Spain</div>
+            </div>
+
+            <!-- PROJECT 7 -->
+            <div class="project-card">
+                <img src="/Project7.jpg" alt="">
+                <div class="overlay">Opal Crown Business Center_Tokyo, Japan</div>
+            </div>
+
+            <!-- PROJECT 8 -->
+            <div class="project-card">
+                <img src="/Project8.jpg" alt="">
+                <div class="overlay">Casa Bella Elite Lobby_Madrid, Spain</div>
+            </div>
+
+            <!-- PROJECT 9 -->
+            <div class="project-card">
+                <img src="/Project9.jpg" alt="">
+                <div class="overlay">The Velvet Orchid Boutique Lounge_Cape Town, South Africa</div>
+            </div>
+
         </div>
-    </div>
 
-    <div class="strip"></div>
+    </section>
+<section class="portfolio-intro">
+    <div class="top-line"></div>
+
+    <h2 class="heading1">Transforming Spaces Across the UK</h2>
+    <h2 class="heading2">Our Portfolio of Excellence</h2>
+
+    <p class="intro-text">
+        Every project tells a story of collaboration, creativity, and craftsmanship. 
+        Explore how we've helped shape exceptional interiors across the UK.
+    </p>
+
+    <button class="read-more-btn">Read More ></button>
 </section>
-
 <footer class="footer">
     <div class="footer-content">
 
@@ -457,63 +182,5 @@
     </p>
 </footer>
 
-<script>
-    // Safe animations that won't hide content
-    document.addEventListener('DOMContentLoaded', function() {
-        
-        // Create floating particles (safe version)
-        function createParticles() {
-            const container = document.getElementById('particles');
-            if (!container) return;
-            
-            for (let i = 0; i < 8; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                
-                const size = Math.random() * 15 + 5;
-                const left = Math.random() * 100;
-                const delay = Math.random() * 15;
-                const duration = Math.random() * 10 + 15;
-                
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.left = `${left}%`;
-                particle.style.animationDelay = `${delay}s`;
-                particle.style.animationDuration = `${duration}s`;
-                
-                container.appendChild(particle);
-            }
-        }
-        
-        // Scroll animations (safe version)
-        function initScrollAnimations() {
-            const scrollElements = document.querySelectorAll('.scroll-fade');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animated');
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            scrollElements.forEach(element => observer.observe(element));
-        }
-        
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-        
-        // Initialize animations
-        createParticles();
-        initScrollAnimations();
-    });
-</script>
 </body>
 </html>
